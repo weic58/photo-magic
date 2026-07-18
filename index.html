@@ -23,9 +23,9 @@ button,input{font:inherit}button{color:inherit;user-select:none;-webkit-user-sel
 .title h1{font-size:42px;line-height:1;margin:0 0 8px;letter-spacing:-2px;text-shadow:0 2px 12px #000;color:#fff}.title p{font-size:19px;font-weight:650;margin:0;text-shadow:0 2px 10px #000;color:#fff}.header-actions button{color:#fff!important}.header-actions{display:flex;gap:10px;pointer-events:auto}.round-btn,.pill-btn{border:1px solid rgba(255,255,255,.22);background:rgba(62,62,64,.58);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);height:56px;min-width:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 4px 18px rgba(0,0,0,.25)}.pill-btn{border-radius:30px;padding:0 19px;font-size:19px;font-weight:700}
 .bottom{position:absolute;z-index:20;left:0;right:0;bottom:0;height:calc(96px + env(safe-area-inset-bottom));padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;align-items:flex-start;gap:18px;background:linear-gradient(transparent,rgba(245,245,247,.48) 42%,rgba(242,242,247,.86));pointer-events:none;transition:background .22s ease}.bottom.at-bottom{background:linear-gradient(transparent,rgba(255,255,255,.78) 42%,#fff)}.tabs,.search-tab{pointer-events:auto}.tabs{height:70px;background:rgba(242,242,247,.72);color:#111;border-radius:35px;padding:5px;display:flex;gap:2px;box-shadow:0 8px 30px rgba(0,0,0,.42);backdrop-filter:blur(18px)}.tab{border:0;background:transparent;border-radius:30px;width:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:650}.tab .ico{font-size:25px;line-height:1}.tab.active{background:rgba(255,255,255,.72);color:#007aff}.search-tab{height:70px;width:70px;border-radius:50%;border:0;background:rgba(242,242,247,.72);color:#111;font-size:31px;box-shadow:0 8px 30px rgba(0,0,0,.42)}
 .viewer{position:absolute;inset:0;z-index:60;background:#000;display:none}.viewer.show{display:block}.viewer-top{position:absolute;z-index:2;top:0;left:0;right:0;height:calc(72px + env(safe-area-inset-top));padding:calc(12px + env(safe-area-inset-top)) 18px 0;display:flex;justify-content:space-between;background:linear-gradient(rgba(0,0,0,.8),transparent)}.viewer button{border:0;background:rgba(60,60,60,.58);border-radius:50%;width:44px;height:44px;font-size:24px}.viewer-stage{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;touch-action:none}.viewer-stage img{max-width:100%;max-height:100%;object-fit:contain}.viewer-meta{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;text-shadow:0 1px 5px #000}
-.sheet{position:absolute;z-index:80;inset:0;background:rgba(0,0,0,.46);display:none;align-items:flex-end}.sheet.show{display:flex}.sheet-card{width:100%;max-height:89dvh;overflow:auto;background:#1c1c1e;border-radius:24px 24px 0 0;padding:10px 18px calc(28px + env(safe-area-inset-bottom));box-shadow:0 -10px 50px rgba(0,0,0,.48)}.handle{width:42px;height:5px;background:#777;border-radius:3px;margin:0 auto 16px}.sheet h2{margin:0 0 14px;font-size:26px}.sheet h3{font-size:15px;color:#aaa;margin:22px 0 8px}.field{width:100%;border:0;border-radius:12px;padding:13px 14px;background:#2c2c2e;color:#fff;margin:5px 0}.primary,.secondary,.danger{width:100%;border:0;border-radius:13px;padding:14px;margin-top:9px;font-weight:700;background:var(--blue)}.secondary{background:#343437}.danger{background:#5a2024;color:#ffb2b7}.row{display:flex;gap:9px}.row>*{flex:1}.target-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.target{border:2px solid transparent;background:#2c2c2e;border-radius:14px;overflow:hidden;padding:0}.target img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.target span{display:block;padding:8px 4px;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.target.active{border-color:var(--blue)}.hint{color:#aaa;font-size:13px;line-height:1.55}.switchline{display:flex;justify-content:space-between;align-items:center;padding:10px 0}.switch{appearance:none;width:48px;height:28px;border-radius:14px;background:#555;position:relative}.switch:checked{background:#30d158}.switch:before{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:#fff;left:2px;top:2px;transition:.2s}.switch:checked:before{transform:translateX(20px)}
+.sheet{position:absolute;z-index:80;inset:0;background:rgba(0,0,0,.46);display:none;align-items:flex-end}.sheet.show{display:flex}.sheet-card{width:100%;max-height:89dvh;overflow:auto;background:#1c1c1e;color:#fff;border-radius:24px 24px 0 0;padding:10px 18px calc(28px + env(safe-area-inset-bottom));box-shadow:0 -10px 50px rgba(0,0,0,.48)}.handle{width:42px;height:5px;background:#777;border-radius:3px;margin:0 auto 16px}.sheet h2{margin:0 0 14px;font-size:26px}.sheet h3{font-size:15px;color:#aaa;margin:22px 0 8px}.field{width:100%;border:0;border-radius:12px;padding:13px 14px;background:#2c2c2e;color:#fff;margin:5px 0}.field::placeholder{color:#9a9aa0}.field::file-selector-button{border:0;border-radius:8px;padding:7px 10px;margin-right:10px;background:#48484a;color:#fff}.sheet-card button,.sheet-card label,.sheet-card .switchline,.sheet-card h2{color:#fff}.primary,.secondary,.danger{width:100%;border:0;border-radius:13px;padding:14px;margin-top:9px;font-weight:700;background:var(--blue)}.secondary{background:#343437}.danger{background:#5a2024;color:#ffb2b7}.row{display:flex;gap:9px}.row>*{flex:1}.target-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.target{border:2px solid transparent;background:#2c2c2e;border-radius:14px;overflow:hidden;padding:0}.target img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.target span{display:block;padding:8px 4px;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.target.active{border-color:var(--blue)}.hint{color:#aaa;font-size:13px;line-height:1.55}.switchline{display:flex;justify-content:space-between;align-items:center;padding:10px 0}.switch{appearance:none;width:48px;height:28px;border-radius:14px;background:#555;position:relative}.switch:checked{background:#30d158}.switch:before{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:#fff;left:2px;top:2px;transition:.2s}.switch:checked:before{transform:translateX(20px)}
 
-.library-end-space{height:calc(176px + env(safe-area-inset-bottom));background:#fff;position:relative;z-index:1}
+.library-end-space{height:calc(82px + env(safe-area-inset-bottom));background:#fff;position:relative;z-index:1}.gallery-wrap.is-pinching{background:#171719}.gallery-wrap.is-pinching .gallery-stage{box-shadow:0 0 0 100vmax #171719}
 .bottom.at-bottom .tabs,.bottom.at-bottom .search-tab{background:rgba(255,255,255,.92);box-shadow:0 5px 22px rgba(0,0,0,.14)}
 .bottom:not(.at-bottom) .tabs,.bottom:not(.at-bottom) .search-tab{background:rgba(232,232,237,.72)}
 body.dark-mode,body.dark-mode #app,body.dark-mode .gallery-wrap,body.dark-mode .gallery{background:#000;color:#fff}
@@ -42,18 +42,19 @@ body.dark-mode .bottom:not(.at-bottom){background:linear-gradient(transparent,rg
   <nav class="bottom at-bottom" id="bottomBar"><div class="tabs"><button class="tab active"><span class="ico">▣</span>圖庫</button><button class="tab"><span class="ico">▰</span>選集</button></div><button class="search-tab" id="searchBtn" aria-label="搜尋">⌕</button></nav>
   <section class="viewer" id="viewer"><div class="viewer-top"><button id="viewerClose">‹</button><button>•••</button></div><div class="viewer-stage" id="viewerStage"><img id="viewerImg" alt="照片"></div><div class="viewer-meta" id="viewerMeta"></div></section>
   <div class="sheet" id="searchSheet"><div class="sheet-card"><div class="handle"></div><h2>搜尋</h2><input class="field" placeholder="搜尋照片、人物、地點⋯"><h3>可能的圖庫</h3><div class="target-list" id="publicTargets"></div><button class="secondary" id="closeSearch">完成</button></div></div>
-  <div class="sheet" id="adminSheet"><div class="sheet-card"><div class="handle"></div><h2>秘密設定</h2><h3>匯入圖庫照片</h3><input class="field" id="galleryFiles" type="file" accept="image/*" multiple><div class="switchline"><span>壓縮照片以節省空間</span><input class="switch" id="compressToggle" type="checkbox" checked></div><div class="row"><button class="primary" id="importGallery">加入圖庫</button><button class="secondary" id="shuffleGallery">打亂順序</button></div><p class="hint" id="storageInfo"></p><h3>建立名人目標</h3><input class="field" id="targetName" placeholder="名人名稱"><input class="field" id="targetFile" type="file" accept="image/*"><button class="primary" id="addTarget">新增名人照片</button><div class="target-list" id="adminTargets" style="margin-top:12px"></div><h3>外觀</h3><label class="switchline"><span>白色背景</span><input class="switch" id="lightToggle" type="checkbox" checked></label><h3>效果</h3><label class="switchline"><span>最小縮放疊加淡人像</span><input class="switch" id="overlayToggle" type="checkbox" checked></label><p class="hint">蒙太奇固定使用 40 × 40，共 1600 個 tile；縮放階段包含 8、9、10、11、12 等細緻層級。圖庫照片不足時會循環重複並鋪滿多個畫面；最下方仍保留可下拉的空間。</p><button class="secondary" id="closeAdmin">完成</button><button class="danger" id="clearAll">清除所有資料</button></div></div>
+  <div class="sheet" id="adminSheet"><div class="sheet-card"><div class="handle"></div><h2>秘密設定</h2><h3>匯入圖庫照片</h3><input class="field" id="galleryFiles" type="file" accept="image/*" multiple><div class="switchline"><span>壓縮照片以節省空間</span><input class="switch" id="compressToggle" type="checkbox" checked></div><div class="row"><button class="primary" id="importGallery">加入圖庫</button><button class="secondary" id="shuffleGallery">打亂順序</button></div><p class="hint" id="storageInfo"></p><h3>建立名人目標</h3><input class="field" id="targetName" placeholder="名人名稱"><input class="field" id="targetFile" type="file" accept="image/*"><button class="primary" id="addTarget">新增名人照片</button><div class="target-list" id="adminTargets" style="margin-top:12px"></div><h3>外觀</h3><label class="switchline"><span>白色背景</span><input class="switch" id="lightToggle" type="checkbox" checked></label><h3>效果</h3><label class="switchline"><span>最小縮放疊加淡人像</span><input class="switch" id="overlayToggle" type="checkbox" checked></label><p class="hint">蒙太奇固定使用 40 欄，列數會依手機螢幕高度自動延伸，因此最小縮放時人物會真正鋪滿整個畫面。圖庫照片不足時會循環重複；最下方只保留略高於按鈕的可下拉空間。</p><button class="secondary" id="closeAdmin">完成</button><button class="danger" id="clearAll">清除所有資料</button></div></div>
 </div>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);const gallery=$('#gallery'),wrap=$('#galleryWrap'),stage=$('#galleryStage');
-const DB_NAME='photo-mosaic-magic',STORE='images',MOSAIC_COLS=40,MOSAIC_TILES=1600,LEVELS=[4,5,6,7,8,9,10,11,12,14,16,18,20,24,28,32,36,40];
+const DB_NAME='photo-mosaic-magic',STORE='images',MOSAIC_COLS=40,MOSAIC_EXTRA_PX=140,LEVELS=[4,5,6,7,8,9,10,11,12,14,16,18,20,24,28,32,36,40];
+function mosaicRows(){return Math.max(MOSAIC_COLS,Math.ceil(MOSAIC_COLS*Math.max(1,innerHeight)/Math.max(1,innerWidth)))}
 let db,photos=[],targets=[],selectedTargetId=null,normalOrder=[],currentOrder=[],cols=4,mosaic=false,viewerIndex=0,mosaicColors=[];
-let pinching=false,pinchStartDist=0,pinchStartLevel=0,pinchVisualScale=1,suppressClick=false;
+let pinching=false,pinchStartDist=0,pinchStartLevel=0,pinchVisualScale=1,pinchRatio=1,suppressClick=false;
 let settings=JSON.parse(localStorage.getItem('pmm-settings-v2')||'{"overlay":true,"light":true}');if(settings.light===undefined)settings.light=true;
 const mosaicCache=new Map();
 const TargetManager={
- id:null,imageId:null,src:'',colors:[],order:[],version:0,
+ id:null,imageId:null,src:'',colors:[],order:[],rows:MOSAIC_COLS,version:0,
  async select(id){
   const t=targetById(id),p=photoById(t?.imageId);
   const changed=this.imageId!==p?.id;this.id=id||null;this.imageId=p?.id||null;this.src=p?.src||'';this.colors=[];if(changed)this.order=[];this.version+=changed?1:0;
@@ -63,9 +64,11 @@ const TargetManager={
  },
  async extractColors(){
   if(!this.src){this.colors=[];mosaicColors=[];return}
-  const im=await loadImage(this.src),c=document.createElement('canvas');c.width=c.height=MOSAIC_COLS;const x=c.getContext('2d',{willReadFrequently:true});
-  const side=Math.min(im.width,im.height),sx=(im.width-side)/2,sy=(im.height-side)/2;x.drawImage(im,sx,sy,side,side,0,0,MOSAIC_COLS,MOSAIC_COLS);const d=x.getImageData(0,0,MOSAIC_COLS,MOSAIC_COLS).data;
-  this.colors=Array.from({length:MOSAIC_TILES},(_,i)=>[d[i*4],d[i*4+1],d[i*4+2]]);mosaicColors=this.colors;
+  const im=await loadImage(this.src),rows=mosaicRows(),c=document.createElement('canvas');c.width=MOSAIC_COLS;c.height=rows;const x=c.getContext('2d',{willReadFrequently:true});
+  const dstAspect=MOSAIC_COLS/rows,srcAspect=im.width/im.height;let sx=0,sy=0,sw=im.width,sh=im.height;
+  if(srcAspect>dstAspect){sw=im.height*dstAspect;sx=(im.width-sw)/2}else{sh=im.width/dstAspect;sy=(im.height-sh)/2}
+  x.drawImage(im,sx,sy,sw,sh,0,0,MOSAIC_COLS,rows);const d=x.getImageData(0,0,MOSAIC_COLS,rows).data;
+  this.rows=rows;this.colors=Array.from({length:MOSAIC_COLS*rows},(_,i)=>[d[i*4],d[i*4+1],d[i*4+2]]);mosaicColors=this.colors;
  }
 };
 function uid(){return crypto.randomUUID?.()||Date.now().toString(36)+Math.random().toString(36).slice(2)}
@@ -90,15 +93,17 @@ function expandedNormalOrder(){
  const viewportRows=Math.ceil(innerHeight/tileW);
  const needRows=Math.max(viewportRows*12,Math.ceil(2400/cols));
  const need=Math.ceil(Math.max(src.length,needRows*cols)/cols)*cols;
- return Array.from({length:need},(_,i)=>src[i%src.length]);
+ // 讓最後一個顯示項目固定是時間排序中的最新照片。
+ const start=(src.length-(need%src.length))%src.length;
+ return Array.from({length:need},(_,i)=>src[(start+i)%src.length]);
 }
 function expandedMosaicOrder(){
  const src=currentOrder.length?currentOrder:normalOrder;if(!src.length)return [];
- // 蒙太奇底層固定 40 欄，但畫面會依目前縮放欄數放大。
- // 用目前 cols 計算可見高度，確保即使縮到 40 欄仍有約 4.5 個畫面可滑。
- const visualRows=Math.ceil(cols*4.5)+8;
- const need=Math.max(MOSAIC_TILES,visualRows*MOSAIC_COLS);
- return Array.from({length:Math.ceil(need/MOSAIC_COLS)*MOSAIC_COLS},(_,i)=>src[i%src.length]);
+ // 第一個區塊正好是一張滿版人物；底下只多鋪少量照片，足夠繼續往下拉。
+ const visibleTile=Math.max(2,innerWidth/Math.max(1,cols));
+ const extraRows=Math.max(4,Math.ceil(MOSAIC_EXTRA_PX/visibleTile));
+ const need=src.length+extraRows*MOSAIC_COLS;
+ return Array.from({length:need},(_,i)=>src[i%src.length]);
 }
 function overlayOpacityForCols(c){
  if(!mosaic||!settings.overlay)return 0;
@@ -109,7 +114,9 @@ function updateMosaicGeometry(){
  document.documentElement.style.setProperty('--cols',mosaic?MOSAIC_COLS:cols);
  const zoom=mosaic?MOSAIC_COLS/cols:1;
  stage.style.width=(zoom*100)+'%';stage.style.marginLeft=mosaic?(-((zoom-1)*50))+'%':'0';
+ stage.style.minHeight=mosaic?'calc(100dvh + 96px)':'100%';
  stage.classList.toggle('mosaic',mosaic);
+ $('#targetOverlay').style.aspectRatio=`${MOSAIC_COLS}/${TargetManager.rows||mosaicRows()}`;
  $('#targetOverlay').style.opacity=String(overlayOpacityForCols(cols));
  document.documentElement.style.setProperty('--mosaic-strength',String(Math.max(.22,Math.min(.58,.24+(cols-8)/64))));
 }
@@ -117,54 +124,74 @@ function render(){
  updateMosaicGeometry();gallery.innerHTML='';const frag=document.createDocumentFragment();
  const displayOrder=mosaic?expandedMosaicOrder():expandedNormalOrder();
  displayOrder.forEach((id,i)=>{const p=photoById(id);if(!p)return;const b=document.createElement('button');b.className='tile';const im=document.createElement('img');im.src=p.src;im.alt='照片';im.loading=i<120?'eager':'lazy';im.decoding='async';
-  if(mosaic&&mosaicColors.length){const [r,g,bl]=mosaicColors[i%MOSAIC_TILES],src=p.avg||[127,127,127];const targetLum=.2126*r+.7152*g+.0722*bl,srcLum=Math.max(18,.2126*src[0]+.7152*src[1]+.0722*src[2]);const strength=Math.max(.22,Math.min(.58,.24+(cols-8)/64));const brightness=Math.max(.48,Math.min(1.72,targetLum/srcLum));im.style.filter=`brightness(${brightness.toFixed(2)}) saturate(${(1-strength*.42).toFixed(2)}) contrast(${(1.02+strength*.12).toFixed(2)})`;b.style.setProperty('--tile-tint',`${r} ${g} ${bl}`);b.style.setProperty('--tile-tint-opacity',String(strength));b.style.setProperty('--tile-light-opacity',String(.10+strength*.22))}
+  if(mosaic&&mosaicColors.length){const [r,g,bl]=mosaicColors[i%mosaicColors.length],src=p.avg||[127,127,127];const targetLum=.2126*r+.7152*g+.0722*bl,srcLum=Math.max(18,.2126*src[0]+.7152*src[1]+.0722*src[2]);const strength=Math.max(.22,Math.min(.58,.24+(cols-8)/64));const brightness=Math.max(.48,Math.min(1.72,targetLum/srcLum));im.style.filter=`brightness(${brightness.toFixed(2)}) saturate(${(1-strength*.42).toFixed(2)}) contrast(${(1.02+strength*.12).toFixed(2)})`;b.style.setProperty('--tile-tint',`${r} ${g} ${bl}`);b.style.setProperty('--tile-tint-opacity',String(strength));b.style.setProperty('--tile-light-opacity',String(.10+strength*.22))}
   b.appendChild(im);b.onclick=()=>{if(!suppressClick)openViewer(i%Math.max(1,currentOrder.length))};frag.appendChild(b)});
  gallery.appendChild(frag);$('#count').textContent='16,445';$('#targetOverlay').src=TargetManager.src||'';
 }
 function nearestLevelIndex(value){let bi=0,bd=Infinity;LEVELS.forEach((v,i)=>{const d=Math.abs(v-value);if(d<bd){bd=d;bi=i}});return bi}
 async function extractTargetColors(){await TargetManager.extractColors()}
+function captureScrollAnchor(){
+ const total=Math.max(1,wrap.scrollHeight),center=wrap.scrollTop+wrap.clientHeight/2;
+ return Math.max(0,Math.min(1,center/total));
+}
+function restoreScrollAnchor(anchor){
+ requestAnimationFrame(()=>{const max=Math.max(0,wrap.scrollHeight-wrap.clientHeight);wrap.scrollTop=Math.max(0,Math.min(max,anchor*wrap.scrollHeight-wrap.clientHeight/2));updateBottomBar()});
+}
 async function setLevel(index){
- index=Math.max(0,Math.min(LEVELS.length-1,index));const next=LEVELS[index],wasMosaic=mosaic;cols=next;
+ index=Math.max(0,Math.min(LEVELS.length-1,index));const next=LEVELS[index],wasMosaic=mosaic,anchor=captureScrollAnchor();cols=next;
  if(next>=8){
   mosaic=true;
   if(!TargetManager.src)await TargetManager.select(selectedTargetId);
-  if(!TargetManager.colors.length)await TargetManager.extractColors();
+  if(!TargetManager.colors.length||TargetManager.rows!==mosaicRows()){TargetManager.order=[];mosaicCache.clear();await TargetManager.extractColors()}
   if(!TargetManager.order.length)TargetManager.order=await buildMosaicOrder();
   currentOrder=TargetManager.order.slice();mosaicColors=TargetManager.colors;
-  if(!wasMosaic){render();wrap.scrollTop=Math.max(0,(wrap.scrollHeight-wrap.clientHeight)*.18)}else updateMosaicGeometry();
+  if(!wasMosaic){
+   render();
+   // 進入蒙太奇後停在內容中段，畫面上下都有照片，不會落在底部留白區。
+   requestAnimationFrame(()=>{wrap.scrollTop=0;updateBottomBar()});
+  }else{
+   updateMosaicGeometry();restoreScrollAnchor(anchor)
+  }
  }else{
   mosaic=false;currentOrder=normalOrder.slice();render();scrollToNewest(true)
  }
 }
 async function buildMosaicOrder(){
- const size=MOSAIC_COLS;
- const key=(TargetManager.imageId||selectedTargetId)+'|'+size+'|'+normalOrder.join(',');if(mosaicCache.has(key))return mosaicCache.get(key).slice();
+ const size=MOSAIC_COLS,rows=TargetManager.rows||mosaicRows();
+ const key=(TargetManager.imageId||selectedTargetId)+'|'+size+'x'+rows+'|'+normalOrder.join(',');if(mosaicCache.has(key))return mosaicCache.get(key).slice();
  const pool=normalOrder.map(photoById).filter(Boolean);if(!TargetManager.src||!pool.length)return expandedNormalOrder();
- const im=await loadImage(TargetManager.src),c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d',{willReadFrequently:true});const side=Math.min(im.width,im.height),sx=(im.width-side)/2,sy=(im.height-side)/2;x.drawImage(im,sx,sy,side,side,0,0,size,size);const data=x.getImageData(0,0,size,size).data;
+ const im=await loadImage(TargetManager.src),c=document.createElement('canvas');c.width=size;c.height=rows;const x=c.getContext('2d',{willReadFrequently:true});
+ const dstAspect=size/rows,srcAspect=im.width/im.height;let sx=0,sy=0,sw=im.width,sh=im.height;
+ if(srcAspect>dstAspect){sw=im.height*dstAspect;sx=(im.width-sw)/2}else{sh=im.width/dstAspect;sy=(im.height-sh)/2}
+ x.drawImage(im,sx,sy,sw,sh,0,0,size,rows);const data=x.getImageData(0,0,size,rows).data;
  const pf=pool.map(p=>({id:p.id,f:feature(p.avg||[127,127,127])})),block=[],recentRadius=Math.max(2,Math.round(size/10));
- for(let i=0;i<size*size;i++){const cell=feature([data[i*4],data[i*4+1],data[i*4+2]]);let best=null,score=Infinity,row=Math.floor(i/size),col=i%size;for(const cand of pf){let penalty=0;for(let rr=Math.max(0,row-recentRadius);rr<=row;rr++){const end=rr===row?col-1:Math.min(size-1,col+recentRadius);for(let cc=Math.max(0,col-recentRadius);cc<=end;cc++)if(block[rr*size+cc]===cand.id)penalty+=10}const sc=featureDist(cell,cand.f)+penalty;if(sc<score){score=sc;best=cand.id}}block.push(best)}
- const out=Array.from({length:MOSAIC_TILES},(_,i)=>block[i%block.length]);mosaicCache.set(key,out);return out.slice()
+ for(let i=0;i<size*rows;i++){
+  const cell=feature([data[i*4],data[i*4+1],data[i*4+2]]),row=Math.floor(i/size),col=i%size,recent=new Map();
+  for(let rr=Math.max(0,row-recentRadius);rr<=row;rr++){const end=rr===row?col-1:Math.min(size-1,col+recentRadius);for(let cc=Math.max(0,col-recentRadius);cc<=end;cc++){const used=block[rr*size+cc];if(used)recent.set(used,(recent.get(used)||0)+1)}}
+  let best=null,score=Infinity;for(const cand of pf){const sc=featureDist(cell,cand.f)+(recent.get(cand.id)||0)*10;if(sc<score){score=sc;best=cand.id}}block.push(best)
+ }
+ mosaicCache.set(key,block);return block.slice()
 }
 function openViewer(i){viewerIndex=i;const p=photoById(currentOrder[i]);if(!p)return;$('#viewerImg').src=p.src;$('#viewerMeta').textContent=`${i+1} / ${currentOrder.length}`;$('#viewer').classList.add('show')}
 function renderTargets(){for(const sel of ['#publicTargets','#adminTargets']){const root=$(sel);root.innerHTML='';targets.forEach(t=>{const p=photoById(t.imageId),b=document.createElement('button');b.className='target'+(t.id===selectedTargetId?' active':'');b.innerHTML=`<img src="${p?.src||''}"><span>${t.name}</span>`;b.onclick=async()=>{await TargetManager.select(t.id);renderTargets();if(sel==='#publicTargets')$('#searchSheet').classList.remove('show');if(mosaic){if(!TargetManager.order.length)TargetManager.order=await buildMosaicOrder();currentOrder=TargetManager.order.slice();mosaicColors=TargetManager.colors;render()}else updateMosaicGeometry()};root.appendChild(b)})}}
 async function importGallery(){const fs=[...$('#galleryFiles').files];if(!fs.length)return;$('#importGallery').textContent='處理中…';for(const f of fs){try{const src=$('#compressToggle').checked?await compressFile(f,128,.62):await fileToDataURL(f),rec={id:uid(),kind:'gallery',name:f.name,src,avg:await averageColor(src),created:Date.now()};await put(rec);photos.push(rec)}catch(e){console.error(e)}}normalOrder=photos.filter(p=>p.kind==='gallery').sort((a,b)=>a.created-b.created).map(p=>p.id);currentOrder=normalOrder.slice();mosaic=false;cols=4;mosaicCache.clear();$('#galleryFiles').value='';$('#importGallery').textContent='加入圖庫';render();scrollToNewest(true);updateStorageInfo()}
-async function addTarget(){const name=$('#targetName').value.trim(),f=$('#targetFile').files[0];if(!name||!f)return;const src=await compressFile(f,720,.80),imageId=uid(),rec={id:imageId,kind:'target',name,src,avg:await averageColor(src),created:Date.now()};await put(rec);photos.push(rec);const t={id:uid(),name,imageId};targets.push(t);await TargetManager.select(t.id);$('#targetName').value='';$('#targetFile').value='';renderTargets();if(mosaic){currentOrder=TargetManager.order.slice();mosaicColors=TargetManager.colors}render()}
+async function addTarget(){const name=$('#targetName').value.trim(),f=$('#targetFile').files[0];if(!name||!f)return;const src=await compressFile(f,720,.80),imageId=uid(),rec={id:imageId,kind:'target',name,src,avg:await averageColor(src),created:Date.now()};await put(rec);photos.push(rec);const t={id:uid(),name,imageId};targets.push(t);await TargetManager.select(t.id);$('#targetName').value='';$('#targetFile').value='';renderTargets();if(mosaic){if(!TargetManager.order.length)TargetManager.order=await buildMosaicOrder();currentOrder=TargetManager.order.slice();mosaicColors=TargetManager.colors}render()}
 function shuffle(){for(let i=normalOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[normalOrder[i],normalOrder[j]]=[normalOrder[j],normalOrder[i]]}mosaicCache.clear();if(!mosaic)currentOrder=normalOrder.slice();render()}
 async function updateStorageInfo(){if(navigator.storage?.estimate){const e=await navigator.storage.estimate();$('#storageInfo').textContent=`已使用約 ${(e.usage/1048576).toFixed(1)} MB；影像存於此瀏覽器。`}}
 function distance(t){return Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY)}
-wrap.addEventListener('touchstart',e=>{if(e.touches.length===2){e.preventDefault();pinching=true;suppressClick=true;pinchStartDist=distance(e.touches);pinchStartLevel=nearestLevelIndex(cols);stage.style.transition='none'}},{passive:false});
-let pinchRAF=0;wrap.addEventListener('touchmove',e=>{if(!pinching||e.touches.length!==2)return;e.preventDefault();const ratio=distance(e.touches)/pinchStartDist;pinchVisualScale=Math.max(.58,Math.min(1.72,ratio));if(!pinchRAF)pinchRAF=requestAnimationFrame(()=>{pinchRAF=0;stage.style.transform=`translate3d(0,0,0) scale(${pinchVisualScale})`} )},{passive:false});
+wrap.addEventListener('touchstart',e=>{if(e.touches.length===2){e.preventDefault();pinching=true;suppressClick=true;pinchStartDist=distance(e.touches);pinchStartLevel=nearestLevelIndex(cols);pinchRatio=1;pinchVisualScale=1;wrap.classList.add('is-pinching');const cx=(e.touches[0].clientX+e.touches[1].clientX)/2,cy=(e.touches[0].clientY+e.touches[1].clientY)/2+wrap.scrollTop;stage.style.transformOrigin=`${cx}px ${cy}px`;stage.style.transition='none'}},{passive:false});
+let pinchRAF=0;wrap.addEventListener('touchmove',e=>{if(!pinching||e.touches.length!==2)return;e.preventDefault();pinchRatio=Math.max(.42,Math.min(2.4,distance(e.touches)/pinchStartDist));pinchVisualScale=Math.max(.95,Math.min(1.08,1+(pinchRatio-1)*.16));if(!pinchRAF)pinchRAF=requestAnimationFrame(()=>{pinchRAF=0;stage.style.transform=`translate3d(0,0,0) scale(${pinchVisualScale})`} )},{passive:false});
 async function finishPinch(){
- if(!pinching)return;pinching=false;const oldCols=cols,endRatio=pinchVisualScale;
+ if(!pinching)return;pinching=false;const oldCols=cols,endRatio=pinchRatio;
  const steps=Math.round(-Math.log(endRatio)/Math.log(1.12));
  const targetIndex=Math.max(0,Math.min(LEVELS.length-1,pinchStartLevel+steps)),nextCols=LEVELS[targetIndex];
- if(nextCols!==oldCols){
-  await setLevel(targetIndex);
-  const compensation=(nextCols/oldCols)*endRatio;
-  stage.style.transition='none';stage.style.transform=`translate3d(0,0,0) scale(${compensation})`;stage.getBoundingClientRect()
- }
- stage.style.transition='transform .28s cubic-bezier(.2,.72,.25,1),width .28s cubic-bezier(.2,.72,.25,1),margin-left .28s cubic-bezier(.2,.72,.25,1)';stage.style.transform='translate3d(0,0,0) scale(1)';pinchVisualScale=1;
- setTimeout(()=>{stage.style.transition='';suppressClick=false},310)
+ // 先讓目前圖庫恢復滿版，再進行可能較久的蒙太奇計算，避免縮小畫面停留成白屏。
+ stage.style.transition='transform .12s ease-out';stage.style.transform='translate3d(0,0,0) scale(1)';
+ wrap.classList.remove('is-pinching');pinchVisualScale=1;pinchRatio=1;
+ await new Promise(r=>setTimeout(r,125));
+ if(nextCols!==oldCols)await setLevel(targetIndex);
+ stage.style.transformOrigin='center top';
+ setTimeout(()=>{stage.style.transition='';suppressClick=false},180)
 }
 wrap.addEventListener('touchend',e=>{if(e.touches.length<2)finishPinch()},{passive:false});wrap.addEventListener('touchcancel',finishPinch,{passive:false});
 wrap.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setLevel(nearestLevelIndex(cols)+(e.deltaY>0?1:-1))}},{passive:false});
@@ -173,6 +200,8 @@ $('#overlayToggle').checked=settings.overlay;$('#overlayToggle').onchange=e=>{se
 $('#lightToggle').checked=settings.light;function applyAppearance(){document.body.classList.toggle('dark-mode',!settings.light);document.querySelector('meta[name=theme-color]').content=settings.light?'#ffffff':'#0a0a0a'}applyAppearance();$('#lightToggle').onchange=e=>{settings.light=e.target.checked;applyAppearance();saveMeta();updateBottomBar()};
 function updateBottomBar(){const max=Math.max(0,wrap.scrollHeight-wrap.clientHeight),atBottom=max-wrap.scrollTop<18;$('#bottomBar').classList.toggle('at-bottom',atBottom)}
 wrap.addEventListener('scroll',updateBottomBar,{passive:true});
+window.addEventListener('resize',()=>{if(!mosaic)return;const rows=mosaicRows();if(rows!==TargetManager.rows){TargetManager.colors=[];TargetManager.order=[];mosaicCache.clear()}},{passive:true});
+
 function scrollToNewest(instant=false){requestAnimationFrame(()=>{wrap.scrollTo({top:wrap.scrollHeight,behavior:instant?'auto':'smooth'});updateBottomBar()})}
 let vx=0;$('#viewerStage').ontouchstart=e=>vx=e.touches[0].clientX;$('#viewerStage').ontouchend=e=>{const dx=e.changedTouches[0].clientX-vx;if(Math.abs(dx)>50){viewerIndex=(viewerIndex+(dx<0?1:-1)+currentOrder.length)%currentOrder.length;openViewer(viewerIndex)}};
 $('#clearAll').onclick=async()=>{if(!confirm('確定清除所有資料？'))return;await new Promise((res,rej)=>{db.close();const r=indexedDB.deleteDatabase(DB_NAME);r.onsuccess=res;r.onerror=rej});Object.keys(localStorage).filter(k=>k.startsWith('pmm-')).forEach(k=>localStorage.removeItem(k));location.reload()};
