@@ -14,7 +14,7 @@
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang TC",sans-serif}
 button,input{font:inherit}button{color:inherit;user-select:none;-webkit-user-select:none}
 #app{position:relative;width:100%;height:100dvh;overflow:hidden;background:#fff}
-.gallery-wrap{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:auto;background:#fff;touch-action:pan-y;scrollbar-width:none}.gallery-wrap::-webkit-scrollbar{display:none}
+.gallery-wrap{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch;background:#fff;touch-action:pan-y;scrollbar-width:none}.gallery-wrap::-webkit-scrollbar{display:none}
 .gallery-stage{position:relative;min-height:100%;transform-origin:center top;will-change:transform,width,margin-left;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .gallery{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:var(--gap);align-content:start;background:#fff;transform:translateZ(0)}
 .tile{border:0;padding:0;margin:0;width:100%;aspect-ratio:1;background:#171719;overflow:hidden;position:relative;isolation:isolate}.tile img{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.015);pointer-events:none}.tile::after{content:"";position:absolute;inset:0;background:rgb(var(--tile-tint,127 127 127));opacity:var(--tile-tint-opacity,0);mix-blend-mode:color;pointer-events:none;z-index:2}.mosaic .tile::before{content:"";position:absolute;inset:0;background:rgb(var(--tile-tint,127 127 127));opacity:var(--tile-light-opacity,0);mix-blend-mode:soft-light;pointer-events:none;z-index:3}
@@ -25,7 +25,7 @@ button,input{font:inherit}button{color:inherit;user-select:none;-webkit-user-sel
 .viewer{position:absolute;inset:0;z-index:60;background:#000;display:none}.viewer.show{display:block}.viewer-top{position:absolute;z-index:2;top:0;left:0;right:0;height:calc(72px + env(safe-area-inset-top));padding:calc(12px + env(safe-area-inset-top)) 18px 0;display:flex;justify-content:space-between;background:linear-gradient(rgba(0,0,0,.8),transparent)}.viewer button{border:0;background:rgba(60,60,60,.58);border-radius:50%;width:44px;height:44px;font-size:24px}.viewer-stage{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;touch-action:none}.viewer-stage img{max-width:100%;max-height:100%;object-fit:contain}.viewer-meta{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;text-shadow:0 1px 5px #000}
 .sheet{position:absolute;z-index:80;inset:0;background:rgba(0,0,0,.46);display:none;align-items:flex-end}.sheet.show{display:flex}.sheet-card{width:100%;max-height:89dvh;overflow:auto;background:#1c1c1e;border-radius:24px 24px 0 0;padding:10px 18px calc(28px + env(safe-area-inset-bottom));box-shadow:0 -10px 50px rgba(0,0,0,.48)}.handle{width:42px;height:5px;background:#777;border-radius:3px;margin:0 auto 16px}.sheet h2{margin:0 0 14px;font-size:26px}.sheet h3{font-size:15px;color:#aaa;margin:22px 0 8px}.field{width:100%;border:0;border-radius:12px;padding:13px 14px;background:#2c2c2e;color:#fff;margin:5px 0}.primary,.secondary,.danger{width:100%;border:0;border-radius:13px;padding:14px;margin-top:9px;font-weight:700;background:var(--blue)}.secondary{background:#343437}.danger{background:#5a2024;color:#ffb2b7}.row{display:flex;gap:9px}.row>*{flex:1}.target-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.target{border:2px solid transparent;background:#2c2c2e;border-radius:14px;overflow:hidden;padding:0}.target img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.target span{display:block;padding:8px 4px;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.target.active{border-color:var(--blue)}.hint{color:#aaa;font-size:13px;line-height:1.55}.switchline{display:flex;justify-content:space-between;align-items:center;padding:10px 0}.switch{appearance:none;width:48px;height:28px;border-radius:14px;background:#555;position:relative}.switch:checked{background:#30d158}.switch:before{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:#fff;left:2px;top:2px;transition:.2s}.switch:checked:before{transform:translateX(20px)}
 
-.library-end-space{height:calc(128px + env(safe-area-inset-bottom));background:#fff;position:relative;z-index:1}
+.library-end-space{height:calc(176px + env(safe-area-inset-bottom));background:#fff;position:relative;z-index:1}
 .bottom.at-bottom .tabs,.bottom.at-bottom .search-tab{background:rgba(255,255,255,.92);box-shadow:0 5px 22px rgba(0,0,0,.14)}
 .bottom:not(.at-bottom) .tabs,.bottom:not(.at-bottom) .search-tab{background:rgba(232,232,237,.72)}
 body.dark-mode,body.dark-mode #app,body.dark-mode .gallery-wrap,body.dark-mode .gallery{background:#000;color:#fff}
@@ -42,7 +42,7 @@ body.dark-mode .bottom:not(.at-bottom){background:linear-gradient(transparent,rg
   <nav class="bottom at-bottom" id="bottomBar"><div class="tabs"><button class="tab active"><span class="ico">▣</span>圖庫</button><button class="tab"><span class="ico">▰</span>選集</button></div><button class="search-tab" id="searchBtn" aria-label="搜尋">⌕</button></nav>
   <section class="viewer" id="viewer"><div class="viewer-top"><button id="viewerClose">‹</button><button>•••</button></div><div class="viewer-stage" id="viewerStage"><img id="viewerImg" alt="照片"></div><div class="viewer-meta" id="viewerMeta"></div></section>
   <div class="sheet" id="searchSheet"><div class="sheet-card"><div class="handle"></div><h2>搜尋</h2><input class="field" placeholder="搜尋照片、人物、地點⋯"><h3>可能的圖庫</h3><div class="target-list" id="publicTargets"></div><button class="secondary" id="closeSearch">完成</button></div></div>
-  <div class="sheet" id="adminSheet"><div class="sheet-card"><div class="handle"></div><h2>秘密設定</h2><h3>匯入圖庫照片</h3><input class="field" id="galleryFiles" type="file" accept="image/*" multiple><div class="switchline"><span>壓縮照片以節省空間</span><input class="switch" id="compressToggle" type="checkbox" checked></div><div class="row"><button class="primary" id="importGallery">加入圖庫</button><button class="secondary" id="shuffleGallery">打亂順序</button></div><p class="hint" id="storageInfo"></p><h3>建立名人目標</h3><input class="field" id="targetName" placeholder="名人名稱"><input class="field" id="targetFile" type="file" accept="image/*"><button class="primary" id="addTarget">新增名人照片</button><div class="target-list" id="adminTargets" style="margin-top:12px"></div><h3>外觀</h3><label class="switchline"><span>白色背景</span><input class="switch" id="lightToggle" type="checkbox" checked></label><h3>效果</h3><label class="switchline"><span>最小縮放疊加淡人像</span><input class="switch" id="overlayToggle" type="checkbox" checked></label><p class="hint">蒙太奇固定使用 40 × 40，共 1600 個 tile；縮放階段包含 8、9、10、11、12 等細緻層級。圖庫照片不足時會分散重複，避免相同照片出現在附近。</p><button class="secondary" id="closeAdmin">完成</button><button class="danger" id="clearAll">清除所有資料</button></div></div>
+  <div class="sheet" id="adminSheet"><div class="sheet-card"><div class="handle"></div><h2>秘密設定</h2><h3>匯入圖庫照片</h3><input class="field" id="galleryFiles" type="file" accept="image/*" multiple><div class="switchline"><span>壓縮照片以節省空間</span><input class="switch" id="compressToggle" type="checkbox" checked></div><div class="row"><button class="primary" id="importGallery">加入圖庫</button><button class="secondary" id="shuffleGallery">打亂順序</button></div><p class="hint" id="storageInfo"></p><h3>建立名人目標</h3><input class="field" id="targetName" placeholder="名人名稱"><input class="field" id="targetFile" type="file" accept="image/*"><button class="primary" id="addTarget">新增名人照片</button><div class="target-list" id="adminTargets" style="margin-top:12px"></div><h3>外觀</h3><label class="switchline"><span>白色背景</span><input class="switch" id="lightToggle" type="checkbox" checked></label><h3>效果</h3><label class="switchline"><span>最小縮放疊加淡人像</span><input class="switch" id="overlayToggle" type="checkbox" checked></label><p class="hint">蒙太奇固定使用 40 × 40，共 1600 個 tile；縮放階段包含 8、9、10、11、12 等細緻層級。圖庫照片不足時會循環重複並鋪滿多個畫面；最下方仍保留可下拉的空間。</p><button class="secondary" id="closeAdmin">完成</button><button class="danger" id="clearAll">清除所有資料</button></div></div>
 </div>
 <script>
 'use strict';
@@ -84,16 +84,21 @@ function feature(rgb){const [h,s,v]=rgbToHsv(rgb);return [Math.cos(h*Math.PI/180
 function featureDist(a,b){return 1.15*((a[0]-b[0])**2+(a[1]-b[1])**2)+.35*(a[2]-b[2])**2+1.3*(a[3]-b[3])**2+1.6*(a[4]-b[4])**2}
 function expandedNormalOrder(){
  const src=normalOrder.slice();if(!src.length)return [];
- const tileW=Math.max(1,innerWidth/cols),needRows=Math.ceil((innerHeight*3.2)/tileW)+4;
- const need=Math.max(800,src.length,cols*needRows);
- return Array.from({length:Math.ceil(need/cols)*cols},(_,i)=>src[i%src.length]);
+ // 一般圖庫預先鋪滿大量重複照片，讓使用者能從最新照片向上滑很長一段距離。
+ // 保留真正的時間順序：陣列前方較舊、後方較新。
+ const tileW=Math.max(1,innerWidth/cols);
+ const viewportRows=Math.ceil(innerHeight/tileW);
+ const needRows=Math.max(viewportRows*12,Math.ceil(2400/cols));
+ const need=Math.ceil(Math.max(src.length,needRows*cols)/cols)*cols;
+ return Array.from({length:need},(_,i)=>src[i%src.length]);
 }
 function expandedMosaicOrder(){
  const src=currentOrder.length?currentOrder:normalOrder;if(!src.length)return [];
- const tileW=Math.max(1,innerWidth/MOSAIC_COLS);
- const rows=Math.max(MOSAIC_COLS,Math.ceil((innerHeight+180)/tileW)+6);
- const need=Math.max(MOSAIC_TILES,rows*MOSAIC_COLS);
- return Array.from({length:need},(_,i)=>src[i%src.length]);
+ // 蒙太奇底層固定 40 欄，但畫面會依目前縮放欄數放大。
+ // 用目前 cols 計算可見高度，確保即使縮到 40 欄仍有約 4.5 個畫面可滑。
+ const visualRows=Math.ceil(cols*4.5)+8;
+ const need=Math.max(MOSAIC_TILES,visualRows*MOSAIC_COLS);
+ return Array.from({length:Math.ceil(need/MOSAIC_COLS)*MOSAIC_COLS},(_,i)=>src[i%src.length]);
 }
 function overlayOpacityForCols(c){
  if(!mosaic||!settings.overlay)return 0;
