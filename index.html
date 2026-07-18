@@ -18,7 +18,7 @@ button,input{font:inherit}button{color:inherit;user-select:none;-webkit-user-sel
 .gallery-stage{position:relative;min-height:100%;transform-origin:center top}
 .gallery{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:var(--gap);align-content:start;background:#fff;contain:layout paint style}
 .tile{border:0;padding:0;margin:0;width:100%;aspect-ratio:1;background:#171719;overflow:hidden;position:relative;contain:layout paint style}.tile img{width:100%;height:100%;display:block;object-fit:cover;pointer-events:none}
-.target-overlay{position:absolute;z-index:5;inset:0 0 auto 0;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;opacity:0;pointer-events:none;mix-blend-mode:normal;transition:opacity .24s cubic-bezier(.22,.61,.36,1)}.mosaic-canvas{display:none;width:100%;height:auto;background:#171719;vertical-align:top}.gallery-stage.mosaic-ready .gallery{display:none}.gallery-stage.mosaic-ready .mosaic-canvas{display:block}
+.target-overlay{position:absolute;z-index:6;inset:0 0 auto 0;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;opacity:0;pointer-events:none;mix-blend-mode:normal;transition:opacity .24s cubic-bezier(.22,.61,.36,1)}.mosaic-canvas{display:none;width:100%;height:auto;background:#171719;vertical-align:top}.mosaic-tint-canvas{display:none;position:absolute;z-index:5;inset:0 0 auto 0;width:100%;height:auto;pointer-events:none;opacity:0;will-change:opacity;transition:opacity .22s cubic-bezier(.22,.61,.36,1)}.gallery-stage.mosaic-ready .gallery{display:none}.gallery-stage.mosaic-ready .mosaic-canvas,.gallery-stage.mosaic-ready .mosaic-tint-canvas{display:block}
 .header{position:absolute;z-index:20;top:0;left:0;right:0;height:calc(122px + env(safe-area-inset-top));padding:calc(16px + env(safe-area-inset-top)) 20px 12px;display:flex;justify-content:space-between;align-items:flex-start;background:linear-gradient(rgba(0,0,0,.74),rgba(0,0,0,.28) 65%,transparent);pointer-events:none;color:#fff}
 .title h1{font-size:42px;line-height:1;margin:0 0 8px;letter-spacing:-2px;text-shadow:0 2px 12px #000;color:#fff}.title p{font-size:19px;font-weight:650;margin:0;text-shadow:0 2px 10px #000;color:#fff}.header-actions button{color:#fff!important}.header-actions{display:flex;gap:10px;pointer-events:auto}.round-btn,.pill-btn{border:1px solid rgba(255,255,255,.22);background:rgba(62,62,64,.58);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);height:56px;min-width:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 4px 18px rgba(0,0,0,.25)}.pill-btn{border-radius:30px;padding:0 19px;font-size:19px;font-weight:700}
 .bottom{position:absolute;z-index:20;left:0;right:0;bottom:0;height:calc(96px + env(safe-area-inset-bottom));padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;align-items:flex-start;gap:18px;background:linear-gradient(transparent,rgba(245,245,247,.48) 42%,rgba(242,242,247,.86));pointer-events:none;transition:background .22s ease}.bottom.at-bottom{background:linear-gradient(transparent,rgba(255,255,255,.78) 42%,#fff)}.tabs,.search-tab{pointer-events:auto}.tabs{height:70px;background:rgba(242,242,247,.72);color:#111;border-radius:35px;padding:5px;display:flex;gap:2px;box-shadow:0 8px 30px rgba(0,0,0,.42);backdrop-filter:blur(18px)}.tab{border:0;background:transparent;border-radius:30px;width:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:650}.tab .ico{font-size:25px;line-height:1}.tab.active{background:rgba(255,255,255,.72);color:#007aff}.search-tab{height:70px;width:70px;border-radius:50%;border:0;background:rgba(242,242,247,.72);color:#111;font-size:31px;box-shadow:0 8px 30px rgba(0,0,0,.42)}
@@ -37,7 +37,7 @@ body.dark-mode .bottom:not(.at-bottom){background:linear-gradient(transparent,rg
 </head>
 <body>
 <div id="app">
-  <main class="gallery-wrap" id="galleryWrap"><div class="gallery-stage" id="galleryStage"><div class="gallery" id="gallery"></div><canvas class="mosaic-canvas" id="mosaicCanvas" aria-label="照片蒙太奇"></canvas><img class="target-overlay" id="targetOverlay" alt=""></div><div class="library-end-space" id="libraryEndSpace"></div></main>
+  <main class="gallery-wrap" id="galleryWrap"><div class="gallery-stage" id="galleryStage"><div class="gallery" id="gallery"></div><canvas class="mosaic-canvas" id="mosaicCanvas" aria-label="照片蒙太奇"></canvas><canvas class="mosaic-tint-canvas" id="mosaicTintCanvas" aria-hidden="true"></canvas><img class="target-overlay" id="targetOverlay" alt=""></div><div class="library-end-space" id="libraryEndSpace"></div></main>
   <header class="header"><div class="title"><h1>圖庫</h1><p><span id="count">0</span> 個項目</p></div><div class="header-actions"><button class="round-btn" id="menuBtn">☰</button><button class="pill-btn">選取</button></div></header>
   <nav class="bottom at-bottom" id="bottomBar"><div class="tabs"><button class="tab active"><span class="ico">▣</span>圖庫</button><button class="tab"><span class="ico">▰</span>選集</button></div><button class="search-tab" id="searchBtn" aria-label="搜尋">⌕</button></nav>
   <section class="viewer" id="viewer"><div class="viewer-top"><button id="viewerClose">‹</button><button>•••</button></div><div class="viewer-stage" id="viewerStage"><img id="viewerImg" alt="照片"></div><div class="viewer-meta" id="viewerMeta"></div></section>
@@ -46,7 +46,7 @@ body.dark-mode .bottom:not(.at-bottom){background:linear-gradient(transparent,rg
 </div>
 <script>
 'use strict';
-const $=s=>document.querySelector(s);const gallery=$('#gallery'),wrap=$('#galleryWrap'),stage=$('#galleryStage'),mosaicCanvas=$('#mosaicCanvas');
+const $=s=>document.querySelector(s);const gallery=$('#gallery'),wrap=$('#galleryWrap'),stage=$('#galleryStage'),mosaicCanvas=$('#mosaicCanvas'),mosaicTintCanvas=$('#mosaicTintCanvas');
 const DB_NAME='photo-mosaic-magic',STORE='images',MOSAIC_COLS=40,MOSAIC_EXTRA_PX=140,MOSAIC_RENDER_TILE=28,LEVELS=[4,5,6,7,8,9,10,11,12,14,16,18,20,24,28,32,36,40];
 function mosaicRows(){return Math.max(MOSAIC_COLS,Math.ceil(MOSAIC_COLS*Math.max(1,innerHeight)/Math.max(1,innerWidth)))}
 let db,photos=[],targets=[],selectedTargetId=null,normalOrder=[],currentOrder=[],cols=4,mosaic=false,viewerIndex=0,mosaicColors=[];
@@ -102,10 +102,17 @@ function expandedMosaicOrder(){
  const need=src.length+extraRows*MOSAIC_COLS;
  return Array.from({length:need},(_,i)=>src[i%src.length]);
 }
+function smoothStep01(t){t=Math.max(0,Math.min(1,t));return t*t*(3-2*t)}
+function toneStrengthForCols(c){
+ if(!mosaic)return 0;
+ // 8 欄剛進入蒙太奇時保持原始照片色調，之後才逐級增加目標色。
+ // 到 24 欄後才達到完整調色，避免 6/7 → 8 欄瞬間跳色。
+ return smoothStep01((c-8)/(24-8)).toFixed(3)
+}
 function overlayOpacityForCols(c){
  if(!mosaic||!settings.overlay)return 0;
- const t=Math.max(0,Math.min(1,(c-8)/(MOSAIC_COLS-8)));
- return (.11-.055*t).toFixed(3)
+ // 淡人像只在更小的縮圖階段慢慢浮現，不在 8 欄時突然出現。
+ return (.058*smoothStep01((c-18)/(MOSAIC_COLS-18))).toFixed(3)
 }
 function updateMosaicGeometry(){
  // 蒙太奇改由單一 Canvas 顯示，隱藏的普通圖庫不再重排成 40 欄。
@@ -116,6 +123,7 @@ function updateMosaicGeometry(){
  stage.classList.toggle('mosaic',mosaic);
  stage.classList.toggle('mosaic-ready',mosaic&&!!mosaicReadyKey);
  $('#targetOverlay').style.aspectRatio=`${MOSAIC_COLS}/${TargetManager.rows||mosaicRows()}`;
+ mosaicTintCanvas.style.opacity=String(toneStrengthForCols(cols));
  $('#targetOverlay').style.opacity=String(overlayOpacityForCols(cols));
 }
 function render(){
@@ -171,17 +179,22 @@ async function drawMosaicCanvas(order,version){
  const display=Array.from({length:allRows*MOSAIC_COLS},(_,i)=>order[i%Math.max(1,baseCount)]);mosaicDisplayOrder=display;
  const unique=[...new Set(display)],imagePairs=await Promise.all(unique.map(async id=>{const p=photoById(id);if(!p)return [id,null];try{const im=await loadImage(p.src);if(im.decode)try{await im.decode()}catch{}return [id,im]}catch{return [id,null]}}));
  if(version!==mosaicBuildVersion)return false;const images=new Map(imagePairs);
- mosaicCanvas.width=MOSAIC_COLS*t;mosaicCanvas.height=allRows*t;const ctx=mosaicCanvas.getContext('2d',{alpha:false});ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='medium';ctx.fillStyle='#171719';ctx.fillRect(0,0,mosaicCanvas.width,mosaicCanvas.height);
+ mosaicCanvas.width=MOSAIC_COLS*t;mosaicCanvas.height=allRows*t;
+ mosaicTintCanvas.width=MOSAIC_COLS*t;mosaicTintCanvas.height=allRows*t;
+ const ctx=mosaicCanvas.getContext('2d',{alpha:false}),tint=mosaicTintCanvas.getContext('2d',{alpha:true});
+ ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='medium';ctx.fillStyle='#171719';ctx.fillRect(0,0,mosaicCanvas.width,mosaicCanvas.height);
+ tint.clearRect(0,0,mosaicTintCanvas.width,mosaicTintCanvas.height);
  for(let r=0;r<allRows;r++){
   for(let c=0;c<MOSAIC_COLS;c++){
    const i=r*MOSAIC_COLS+c,id=display[i],im=images.get(id),target=TargetManager.colors[i%baseCount]||[127,127,127],x=c*t,y=r*t;
    if(im){const side=Math.min(im.naturalWidth||im.width,im.naturalHeight||im.height),sx=((im.naturalWidth||im.width)-side)/2,sy=((im.naturalHeight||im.height)-side)/2;ctx.globalAlpha=1;ctx.drawImage(im,sx,sy,side,side,x,y,t,t)}
-   const lum=.2126*target[0]+.7152*target[1]+.0722*target[2];ctx.globalAlpha=.43;ctx.fillStyle=`rgb(${target[0]|0},${target[1]|0},${target[2]|0})`;ctx.fillRect(x,y,t,t);
-   if(lum<92){ctx.globalAlpha=Math.min(.34,(92-lum)/190);ctx.fillStyle='#000';ctx.fillRect(x,y,t,t)}else if(lum>176){ctx.globalAlpha=Math.min(.22,(lum-176)/260);ctx.fillStyle='#fff';ctx.fillRect(x,y,t,t)}
+   // 顏色層獨立成透明 Canvas，縮放時只調整整層 opacity，不必重畫照片。
+   const lum=.2126*target[0]+.7152*target[1]+.0722*target[2];tint.globalAlpha=.43;tint.fillStyle=`rgb(${target[0]|0},${target[1]|0},${target[2]|0})`;tint.fillRect(x,y,t,t);
+   if(lum<92){tint.globalAlpha=Math.min(.34,(92-lum)/190);tint.fillStyle='#000';tint.fillRect(x,y,t,t)}else if(lum>176){tint.globalAlpha=Math.min(.22,(lum-176)/260);tint.fillStyle='#fff';tint.fillRect(x,y,t,t)}
   }
   if((r&7)===7)await new Promise(requestAnimationFrame);if(version!==mosaicBuildVersion)return false
  }
- ctx.globalAlpha=1;return true
+ ctx.globalAlpha=1;tint.globalAlpha=1;return true
 }
 async function ensureMosaicPrepared(force=false){
  const rows=mosaicRows(),key=(TargetManager.imageId||selectedTargetId)+'|'+rows+'|'+normalOrder.join(',');
